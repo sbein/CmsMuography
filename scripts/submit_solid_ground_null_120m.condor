@@ -1,0 +1,14 @@
+universe = vanilla
+executable = /afs/cern.ch/work/s/sbein/Muography/CmsCavern/CosmicMuography/scripts/run_solid_ground_null_chunk.sh
+arguments = $(ProcId) 100
+
+output = /afs/cern.ch/work/s/sbein/Muography/CmsCavern/CosmicMuography/logs/solid_ground_null_120m_$(ClusterId)_$(ProcId).out
+error  = /afs/cern.ch/work/s/sbein/Muography/CmsCavern/CosmicMuography/logs/solid_ground_null_120m_$(ClusterId)_$(ProcId).err
+log    = /afs/cern.ch/work/s/sbein/Muography/CmsCavern/CosmicMuography/logs/solid_ground_null_120m_$(ClusterId).log
+
++JobFlavour = "workday"
+request_cpus = 1
+request_memory = 3000
+request_disk = 500000
+
+queue 100

@@ -1,0 +1,24 @@
+# Generated analysis products
+test_output/
+logs/
+data/*
+!data/README.md
+ANALYSIS_RUNBOOK.md
+NEXT_MODEL_PROMPT.md
+docs/acceptance_kernel_study.tex
+*.root
+*.png
+*.pdf
+
+# Python and local environment noise
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.DS_Store
+
+# Batch/log clutter
+*.out
+*.err
+*.log
+*.aux
