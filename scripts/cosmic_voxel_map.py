@@ -8,6 +8,10 @@ import os
 from array import array
 
 
+DEFAULT_REDIRECTOR = "root://cmsxrootd.fnal.gov/"
+DEFAULT_PROGRESS_EVERY = 10_000
+
+
 DEFAULT_VOLUMES = {
     "cms": {
         "xmin": -2000.0,
@@ -35,6 +39,9 @@ def resolve_args(args):
             setattr(args, key, value)
     if args.trace_axis is None:
         args.trace_axis = "z" if args.coordinate_system == "cavern" else "y"
+    args.redirector = DEFAULT_REDIRECTOR
+    args.progress_every = DEFAULT_PROGRESS_EVERY
+    args.skip_bad_files = True
     return args
 
 
@@ -60,11 +67,6 @@ def parse_args():
         help="Output ROOT file.",
     )
     parser.add_argument("--max-events", type=int, default=-1, help="Maximum events to process.")
-    parser.add_argument(
-        "--redirector",
-        default="root://cms-xrd-global.cern.ch/",
-        help="Redirector prepended to plain /store paths.",
-    )
     parser.add_argument(
         "--coordinate-system",
         choices=("cavern", "cms"),
@@ -170,17 +172,6 @@ def parse_args():
         help="Weight added to each crossed voxel.",
     )
     parser.add_argument("--verbose", action="store_true", help="Print per-event progress.")
-    parser.add_argument(
-        "--progress-every",
-        type=int,
-        default=0,
-        help="Print one progress line every N processed events; 0 disables periodic progress.",
-    )
-    parser.add_argument(
-        "--skip-bad-files",
-        action="store_true",
-        help="Process inputs one at a time and continue past files that cannot be opened/read.",
-    )
     return resolve_args(parser.parse_args())
 
 

@@ -1,0 +1,13 @@
+TITLE
+CMS cavern muography
+
+SUBTITLE
+From cosmic AOD to a 3D significance map
+
+FLOW
+CMS AOD → cleaned cosmic-muon tracks → common 3D voxels
+EXPACS/PARMA → straight-line null → broad data/MC correction
+observed counts + background expectation → signed Li–Ma evidence
+
+LINK
+https://github.com/sbein/cmsmuography

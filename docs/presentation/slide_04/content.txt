@@ -1,0 +1,25 @@
+TITLE
+3. EXPACS/PARMA null and propagation
+
+BULLETS
+- EXPACS/PARMA surface μ: sample energy and zenith at Point 5
+- Uniform point in the finite CMS cylinder; weight by 1/chord length
+- Straight-line propagation through uniform solid overburden
+- Bethe + radiative range survival
+- Fill the same TH3; generate independent Condor chunks
+  - Fast baseline for high-statistics training and closure tests
+  - Alternatives: CORSIKA; Geant4; survey/DEM geology
+
+SAMPLING NOTE
+The default reverse-cms-volume mode draws a point uniformly in the finite CMS
+cylinder volume. EXPACS/PARMA supplies energy and zenith; azimuth is uniform.
+The resulting line is intersected with the cylinder and weighted by the inverse
+of its chord length. This removes the length bias from volume-point sampling and
+recovers the crossing-line measure up to the common normalization. It is not a
+uniform draw of impact parameter on one fixed detector face.
+
+LINKS
+EXPACS/PARMA: https://phits.jaea.go.jp/expacs/
+CORSIKA: https://www.iap.kit.edu/corsika/
+Geant4: https://geant4.web.cern.ch/
+README: https://github.com/sbein/cmsmuography#step-2-make-the-solid-ground-null

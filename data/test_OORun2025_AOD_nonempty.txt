@@ -1,0 +1,2 @@
+# Small OORun2025 cosmic AOD file with nonzero muon/cosmic-track candidates.
+root://cms-xrd-global.cern.ch//store/hidata/OORun2025/Cosmics/AOD/PromptReco-v1/000/394/070/00000/079b9e4e-ee59-4fc0-adc0-1679c20c3cca.root

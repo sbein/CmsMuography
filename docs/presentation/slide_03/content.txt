@@ -1,0 +1,24 @@
+TITLE
+2. Coordinates and reference geometry
+
+BULLETS
+- CMS axes: +x toward LHC centre; +y up; +z along the counter-clockwise beam
+- Cavern frame: x=CMS x, y=−CMS z, z=CMS y
+- Detector dimensions/axes: CMS detector paper
+- Cavern and shaft: LHC Design Report Vol. 2 §10.3
+- Beam level ≈90 m; CERN outreach commonly says 100 m underground
+- North/east: CERN GIS/MapCERN; current compass is an approximate P5→P1 bearing
+  - Hall, shaft, ground and detector wireframes are not survey-grade
+
+VISUAL
+Interpretive display geometry
+
+SOURCES
+CMS detector paper: https://cds.cern.ch/record/1129810
+LHC Design Report Vol. 2: https://cds.cern.ch/record/815187/files/CERN-2004-003-V2.pdf
+MapCERN: https://maps.web.cern.ch/
+CMS Point-5 GIS map: https://cms-docdb.cern.ch/cgi-bin/PublicDocDB/ShowDocument?docid=5747&version=1
+100 m CERN note: https://home.cern/giant-magnet-goes-underground-at-cern/
+
+README LINK
+https://github.com/sbein/cmsmuography#coordinate-convention

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <rect x="34" y="32" width="12" height="1016" fill="#2f65a2"/>
+  <rect x="48" y="32" width="8" height="1016" fill="#d2e655"/>
+
+  <text x="96" y="108" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="500" fill="#111111">CMS geometry data sheet</text>
+  <text x="98" y="156" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#4b5563">Simplified representation used by the CMS cavern muography workflow</text>
+
+  <line x1="760" y1="195" x2="760" y2="1008" stroke="#d1d8e0" stroke-width="2"/>
+
+  <!-- Simplified CMS cross section -->
+  <text x="98" y="226" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#173f70">SIMPLIFIED CMS WIREFRAME</text>
+  <text x="98" y="262" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#6b7280">x–z cross section; beam axis y points out of the page</text>
+
+  <g fill="none" stroke="#2f65a2">
+    <circle cx="326" cy="518" r="215" stroke-width="4"/>
+    <circle cx="326" cy="518" r="181" stroke-width="3" stroke-opacity="0.80"/>
+    <circle cx="326" cy="518" r="155" stroke-width="3" stroke-opacity="0.72"/>
+    <circle cx="326" cy="518" r="129" stroke-width="3" stroke-opacity="0.65"/>
+    <circle cx="326" cy="518" r="110" stroke-width="3" stroke-opacity="0.58"/>
+    <circle cx="326" cy="518" r="86" stroke-width="3" stroke-opacity="0.50"/>
+    <circle cx="326" cy="518" r="52" stroke-width="3" stroke-opacity="0.42"/>
+    <circle cx="326" cy="518" r="35" stroke-width="3" stroke-opacity="0.35"/>
+  </g>
+  <circle cx="326" cy="518" r="8" fill="#111111"/>
+  <text x="339" y="510" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111111">interaction point</text>
+  <text x="339" y="536" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#111111">y = beam axis ⊙</text>
+
+  <line x1="92" y1="754" x2="564" y2="754" stroke="#111111" stroke-width="2"/>
+  <polygon points="564,754 548,746 548,762" fill="#111111"/>
+  <text x="572" y="762" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#111111">+x</text>
+  <line x1="92" y1="754" x2="92" y2="304" stroke="#111111" stroke-width="2"/>
+  <polygon points="92,304 84,320 100,320" fill="#111111"/>
+  <text x="70" y="296" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#111111">+z up</text>
+
+  <g font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#111111">
+    <text x="548" y="344">tracker</text><text x="735" y="344" text-anchor="end">1.20 m</text>
+    <text x="548" y="381">ECAL</text><text x="735" y="381" text-anchor="end">1.80 m</text>
+    <text x="548" y="418">HCAL</text><text x="735" y="418" text-anchor="end">2.95 m</text>
+    <text x="548" y="455">solenoid</text><text x="735" y="455" text-anchor="end">3.80 m</text>
+    <text x="548" y="492">muon MB1</text><text x="735" y="492" text-anchor="end">4.45 m</text>
+    <text x="548" y="529">muon MB2</text><text x="735" y="529" text-anchor="end">5.35 m</text>
+    <text x="548" y="566">muon MB3</text><text x="735" y="566" text-anchor="end">6.25 m</text>
+    <text x="548" y="603">muon MB4</text><text x="735" y="603" text-anchor="end">7.40 m</text>
+  </g>
+  <line x1="548" y1="315" x2="700" y2="315" stroke="#c8d0d9" stroke-width="2"/>
+  <text x="565" y="301" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#173f70">CYLINDER RADIUS</text>
+
+  <rect x="98" y="820" width="600" height="148" fill="#f7f9fb" stroke="#d1d8e0" stroke-width="2"/>
+  <text x="122" y="858" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#173f70">CMS ENVELOPE</text>
+  <text x="122" y="900" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#111111">outer radius</text>
+  <text x="438" y="900" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#111111">7.40 m</text>
+  <text x="122" y="938" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#111111">half-length / full length</text>
+  <text x="438" y="938" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#111111">11 m / 22 m</text>
+
+  <!-- Right-hand data sheet -->
+  <text x="812" y="226" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#173f70">COORDINATES AND ANALYSIS GRID</text>
+  <line x1="812" y1="244" x2="1818" y2="244" stroke="#2f65a2" stroke-width="3"/>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#111111">
+    <text x="820" y="286" font-weight="700">Cavern x</text><text x="1100" y="286">CMS global x</text>
+    <text x="820" y="326" font-weight="700">Cavern y</text><text x="1100" y="326">−CMS global z; beam-pipe axis</text>
+    <text x="820" y="366" font-weight="700">Cavern z</text><text x="1100" y="366">CMS global y; physically upward</text>
+    <text x="820" y="406" font-weight="700">+x bearing</text><text x="1100" y="406">≈ 192.5° from north; interpretive P5→P1 direction</text>
+    <text x="820" y="446" font-weight="700">Volume</text><text x="1100" y="446">x: −20…20 m   y: −30…30 m   z: 0…120 m</text>
+    <text x="820" y="486" font-weight="700">Grid</text><text x="1100" y="486">40 × 60 × 120 bins; 1 m³ voxels</text>
+  </g>
+
+  <text x="812" y="550" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#173f70">CAVERN HALL AND PX56 SHAFT</text>
+  <line x1="812" y1="568" x2="1818" y2="568" stroke="#2f65a2" stroke-width="3"/>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#111111">
+    <text x="820" y="610" font-weight="700">Hall footprint</text><text x="1100" y="610">27 m wide × 53 m long</text>
+    <text x="820" y="650" font-weight="700">Vertical profile</text><text x="1100" y="650">floor −8 m; arch spring +4 m; crown +16 m</text>
+    <text x="820" y="690" font-weight="700">PX56 radius</text><text x="1100" y="690">10.25 m</text>
+    <text x="820" y="730" font-weight="700">PX56 center</text><text x="1100" y="730">(x, y) = (0, +16.25 m); on the CMS −z side</text>
+    <text x="820" y="770" font-weight="700">PX56 z range</text><text x="1100" y="770">+16…110 m</text>
+  </g>
+
+  <text x="812" y="834" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#173f70">GROUND AND MODEL SCOPE</text>
+  <line x1="812" y1="852" x2="1818" y2="852" stroke="#2f65a2" stroke-width="3"/>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#111111">
+    <text x="820" y="894" font-weight="700">Ground surface</text><text x="1100" y="894">quadratic x–y model; z(0,0) ≈ 100.9 m</text>
+    <text x="820" y="934" font-weight="700">Used for</text><text x="1100" y="934">display overlays, CMS sampling, clipping and ray propagation</text>
+  </g>
+  <text x="820" y="974" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#b45309">Interpretive, not survey-grade: coaxial detector cylinders only.</text>
+  <text x="820" y="1005" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#b45309">No detailed endcaps, cracks, services, or detector material map.</text>
+
+  <text x="98" y="1048" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6b7280">Source of truth: scripts/suppress_voxel_pedestals.py and slice_stack_config_json</text>
+  <text x="1350" y="1048" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6b7280">github.com/sbein/cmsmuography</text>
+</svg>

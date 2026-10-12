@@ -4,12 +4,14 @@ set -euo pipefail
 CHUNK_INDEX="${1:?chunk index}"
 NCHUNKS="${2:?number of chunks}"
 
-PROJECT_DIR="${PROJECT_DIR:-/afs/cern.ch/work/s/sbein/Muography/CmsCavern}"
-CMSSW_SRC="${CMSSW_SRC:-${PROJECT_DIR}/CMSSW_16_1_0_pre4/src}"
-TEMPLATE_ROOT="${TEMPLATE_ROOT:-${PROJECT_DIR}/CosmicMuography/test_output/OORun2025_AOD_disk55_no_kipt_zonly_smoothcalib_lima_alpha0p05_120m_rhcavern.root}"
-TEMPLATE_HIST="${TEMPLATE_HIST:-observed_voxels}"
-FLUX_TABLE="${FLUX_TABLE:-${PROJECT_DIR}/CosmicMuography/test_output/expacs_muon_flux_grid_cms_p5.csv}"
-OUT_DIR="${OUT_DIR:-${PROJECT_DIR}/CosmicMuography/test_output/generated_reverse_null_chunks_120m}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
+WORKSPACE_DIR="$(cd "${REPO_DIR}/.." && pwd)"
+CMSSW_SRC="${CMSSW_SRC:-${WORKSPACE_DIR}/CMSSW_16_1_0_pre4/src}"
+TEMPLATE_ROOT="${TEMPLATE_ROOT:-${REPO_DIR}/test_output/OORun2025_AOD_voxel_map_zup_robust.root}"
+TEMPLATE_HIST="${TEMPLATE_HIST:-cavern_muon_voxels}"
+FLUX_TABLE="${FLUX_TABLE:-${REPO_DIR}/test_output/expacs_muon_flux_grid_cms_p5.csv}"
+OUT_DIR="${OUT_DIR:-${REPO_DIR}/test_output/generated_reverse_null_chunks_120m}"
 NTHROWS="${NTHROWS:-20000000}"
 MIN_SURFACE_ENERGY_MEV="${MIN_SURFACE_ENERGY_MEV:-30000}"
 MIN_COSZ="${MIN_COSZ:-0.1}"
@@ -27,10 +29,10 @@ trap cleanup EXIT
 source /cvmfs/cms.cern.ch/cmsset_default.sh
 cd "${CMSSW_SRC}"
 eval "$(scram runtime -sh)"
-cd "${PROJECT_DIR}"
+cd "${REPO_DIR}"
 
 mkdir -p "${OUT_DIR}"
-python3 CosmicMuography/scripts/make_generated_solid_ground_expectation.py \
+python3 scripts/make_generated_solid_ground_expectation.py \
   --sampling-mode reverse-cms-volume \
   --template-root "${TEMPLATE_ROOT}" \
   --template-hist "${TEMPLATE_HIST}" \

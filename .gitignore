@@ -1,24 +1,58 @@
-# Generated analysis products
+# Generated analysis products and batch state
 test_output/
 logs/
-data/*
-!data/README.md
-ANALYSIS_RUNBOOK.md
-NEXT_MODEL_PROMPT.md
-docs/acceptance_kernel_study.tex
+run/
+backups/
 *.root
-*.png
-*.pdf
-
-# Python and local environment noise
-__pycache__/
-*.py[cod]
-.venv/
-venv/
-.DS_Store
-
-# Batch/log clutter
+*.npz
+*.pt
 *.out
 *.err
 *.log
-*.aux
+
+# Local data-discovery products; keep only tiny examples and instructions.
+data/*
+!data/README.md
+!data/OORun2025_AOD_small3.txt
+!data/test_OORun2025_AOD_nonempty.txt
+
+# Generated plots and documents; retain the synthetic README previews.
+*.png
+*.pdf
+!docs/figures/readme/*.png
+!docs/presentation/**/*.png
+
+# Locally compiled EXPACS wrapper
+expacs/expacs_muon_grid
+
+# Python, editors, and temporary script backups
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+venv/
+scripts/*.pre_*
+
+# Optional later-stage ML work remains in the lxplus analysis area but is not
+# part of the compact student-facing baseline repository.
+docs/density_training_dataset.md
+docs/fnal_gpu_handoff.md
+scripts/apply_density_unet_to_root.py
+scripts/check_density_training_samples.py
+scripts/compare_unet_kernel_runs.py
+scripts/make_density_training_sample.py
+scripts/plot_density_training_samples.py
+scripts/plot_unet_performance.py
+scripts/run_apply_densityreg_realdata.sh
+scripts/run_density_training_sample.sh
+scripts/run_plot_unet_performance.sh
+scripts/run_train_density_unet3d.sh
+scripts/run_train_density_unet3d_portable.sh
+scripts/stage_density_training_v3_structured.sh
+scripts/submit_check_density_training_v3_structured.condor
+scripts/submit_density_training_*.condor
+scripts/submit_plot_unet_*.condor
+scripts/submit_train_density_unet3d_*.condor
+scripts/train_density_unet3d.py
+scripts/training_npz_to_root.py
+scripts/validate_density_response.py

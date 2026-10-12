@@ -4,7 +4,8 @@ The fastest verified route for a new collaborator is the synthetic smoke
 pipeline:
 
 ```bash
-cd /afs/cern.ch/work/s/sbein/Muography/CmsMuography && source /cvmfs/cms.cern.ch/cmsset_default.sh && cd /afs/cern.ch/work/s/sbein/Muography/CmsCavern/CMSSW_16_1_0_pre4/src && eval "$(scram runtime -sh)" && cd /afs/cern.ch/work/s/sbein/Muography/CmsMuography && RUNTIME=current ./scripts/run_smoke_pipeline.sh
+cd /afs/cern.ch/work/s/sbein/Muography/CmsCavern/CosmicMuography
+RUNTIME=cmssw ./scripts/run_smoke_pipeline.sh
 ```
 
 This tests, in order:
@@ -25,10 +26,11 @@ test_output/smoke_pipeline
 ```
 
 The synthetic route is deliberately independent of grid proxies and AOD
-replica availability. Once that passes, run the optional direct-AOD smoke:
+replica availability. Once that passes, create a proxy and run the optional
+direct-AOD smoke:
 
 ```bash
-RUNTIME=current RUN_AOD=1 AOD_INPUT=data/OORun2025_AOD_100.txt ./scripts/run_smoke_pipeline.sh
+voms-proxy-init --voms cms --valid 192:00 && RUNTIME=cmssw RUN_AOD=1 AOD_INPUT=data/OORun2025_AOD_100.txt ./scripts/run_smoke_pipeline.sh
 ```
 
 That reads the file list named by `AOD_INPUT` through
@@ -37,7 +39,7 @@ proxy/access setup is required by the site. See `data/README.md` for creating
 a small local list; PFN/LFN replica reports are intentionally not tracked in
 the public repository.
 
-For an lxplus batch-style environment that has not already sourced CMSSW:
+For another lxplus CMSSW area, override the default explicitly:
 
 ```bash
 RUNTIME=cmssw CMSSW_SRC=/afs/cern.ch/work/s/sbein/Muography/CmsCavern/CMSSW_16_1_0_pre4/src ./scripts/run_smoke_pipeline.sh
@@ -51,3 +53,7 @@ Successful completion should produce:
 - `lima_smoothcalib_smoke.root`
 - `lima_smoothcalib_smoke_slice_stacks.root`
 - `png/*.png`
+
+The display stage includes an empty geometry reference canvas, a side-by-side
+observed/raw-null/corrected-null canvas, and 3D threshold plus XY/XZ slice
+canvases for the observed, expected, corrected, and Li-Ma quantities.

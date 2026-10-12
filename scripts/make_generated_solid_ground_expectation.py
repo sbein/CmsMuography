@@ -33,10 +33,10 @@ def parse_args():
         )
     )
     parser.add_argument("--template-root", required=True, help="ROOT file whose TH3 defines the output binning.")
-    parser.add_argument("--template-hist", default="observed_voxels")
+    parser.add_argument("--template-hist", default="cavern_muon_voxels")
     parser.add_argument("--flux-table", required=True, help="CSV produced from the EXPACS/PARMA flux grid.")
     parser.add_argument("-o", "--output", required=True)
-    parser.add_argument("--nthrows", type=int, default=200000)
+    parser.add_argument("--nthrows", type=int, default=2000000)
     parser.add_argument("--seed", type=int, default=12345)
     parser.add_argument("--chunk-index", type=int, default=0)
     parser.add_argument("--nchunks", type=int, default=1)
@@ -44,7 +44,7 @@ def parse_args():
     parser.add_argument(
         "--sampling-mode",
         choices=("forward-plane", "reverse-cms-volume"),
-        default="forward-plane",
+        default="reverse-cms-volume",
         help=(
             "forward-plane samples x/y on a detector plane and rejects non-CMS crossings. "
             "reverse-cms-volume samples points inside the CMS cylinder and weights by 1/chord length."
@@ -54,8 +54,8 @@ def parse_args():
     parser.add_argument("--throw-y-half-width-cm", type=float, default=2500.0)
     parser.add_argument("--cms-radius-cm", type=float, default=CMS_COMPONENT_RADII[-1][1])
     parser.add_argument("--cms-half-length-cm", type=float, default=CMS_HALF_LENGTH_CM)
-    parser.add_argument("--min-surface-energy-mev", type=float, default=5000.0)
-    parser.add_argument("--min-cosz", type=float, default=0.0, help="Minimum sampled vertical direction cosine.")
+    parser.add_argument("--min-surface-energy-mev", type=float, default=30000.0)
+    parser.add_argument("--min-cosz", type=float, default=0.1, help="Minimum sampled vertical direction cosine.")
     parser.add_argument("--density-g-cm3", type=float, default=2.30)
     parser.add_argument("--material-z-over-a", type=float, default=0.5)
     parser.add_argument("--material-I-eV", type=float, default=136.4)

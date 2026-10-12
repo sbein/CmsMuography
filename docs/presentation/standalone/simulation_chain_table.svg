@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <rect x="34" y="32" width="12" height="1016" fill="#2f65a2"/>
+  <rect x="48" y="32" width="8" height="1016" fill="#d2e655"/>
+
+  <text x="96" y="108" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="500" fill="#111111">CMS muography simulation chain</text>
+  <text x="98" y="156" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#4b5563">Current fast solid-ground null, with the full detector-simulation extension shown separately</text>
+
+  <rect x="96" y="198" width="1728" height="62" fill="#eef3f8"/>
+  <line x1="96" y1="198" x2="1824" y2="198" stroke="#2f65a2" stroke-width="4"/>
+  <text x="122" y="239" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" fill="#173f70">STAGE</text>
+  <text x="484" y="239" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" fill="#173f70">CURRENT IMPLEMENTATION</text>
+  <text x="1482" y="239" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" fill="#173f70">OUTPUT</text>
+
+  <line x1="448" y1="198" x2="448" y2="894" stroke="#c8d0d9" stroke-width="2"/>
+  <line x1="1446" y1="198" x2="1446" y2="894" stroke="#c8d0d9" stroke-width="2"/>
+
+  <!-- Row 1 -->
+  <rect x="96" y="260" width="1728" height="104" fill="#ffffff"/>
+  <line x1="96" y1="364" x2="1824" y2="364" stroke="#d7dde4" stroke-width="2"/>
+  <text x="122" y="303" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" fill="#111111">1  Surface generator</text>
+  <text x="484" y="300" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#111111">EXPACS/PARMA flux at CMS Point 5</text>
+  <text x="484" y="337" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#4b5563">sample Eμ and cosθz; choose uniform azimuth φ</text>
+  <text x="1482" y="318" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#111111">(Eμ, θ, φ)</text>
+
+  <!-- Row 2 -->
+  <rect x="96" y="364" width="1728" height="104" fill="#f9fbfc"/>
+  <line x1="96" y1="468" x2="1824" y2="468" stroke="#d7dde4" stroke-width="2"/>
+  <text x="122" y="407" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" fill="#111111">2  CMS injection</text>
+  <text x="484" y="404" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#111111">Sample a point uniformly inside the finite CMS cylinder</text>
+  <text x="484" y="441" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#4b5563">require a cylinder crossing; weight by 1 / chord length</text>
+  <text x="1482" y="422" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#111111">CMS-crossing ray</text>
+
+  <!-- Row 3 -->
+  <rect x="96" y="468" width="1728" height="104" fill="#ffffff"/>
+  <line x1="96" y1="572" x2="1824" y2="572" stroke="#d7dde4" stroke-width="2"/>
+  <text x="122" y="511" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" fill="#111111">3  Propagation</text>
+  <text x="484" y="508" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#111111">Trace a straight line from the CMS exit to the ground surface</text>
+  <text x="484" y="545" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#4b5563">uniform overburden material; compute column depth X</text>
+  <text x="1482" y="526" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#111111">ray + X [g cm⁻²]</text>
+
+  <!-- Row 4 -->
+  <rect x="96" y="572" width="1728" height="104" fill="#f9fbfc"/>
+  <line x1="96" y1="676" x2="1824" y2="676" stroke="#d7dde4" stroke-width="2"/>
+  <text x="122" y="615" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" fill="#111111">4  Energy loss</text>
+  <text x="484" y="612" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#111111">Bethe–Bloch ionization + bE radiative loss</text>
+  <text x="484" y="649" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#4b5563">CSDA range; hard or optionally smeared survival probability</text>
+  <text x="1482" y="630" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#111111">weighted survivor</text>
+
+  <!-- Row 5 -->
+  <rect x="96" y="676" width="1728" height="114" fill="#ffffff"/>
+  <line x1="96" y1="790" x2="1824" y2="790" stroke="#d7dde4" stroke-width="2"/>
+  <text x="122" y="719" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" fill="#111111">5  Detector / reco</text>
+  <text x="484" y="716" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#111111">Fast baseline: 100% geometric CMS-crossing efficiency</text>
+  <text x="484" y="753" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#b45309">No Geant4 hits, DIGI, trigger simulation, or CMSSW RECO yet</text>
+  <text x="1482" y="735" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#111111">truth-level ray proxy</text>
+
+  <!-- Row 6 -->
+  <rect x="96" y="790" width="1728" height="104" fill="#f9fbfc"/>
+  <line x1="96" y1="894" x2="1824" y2="894" stroke="#2f65a2" stroke-width="4"/>
+  <text x="122" y="833" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" fill="#111111">6  Voxelized null</text>
+  <text x="484" y="830" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#111111">Clip to the analysis box; 3D DDA ray paint</text>
+  <text x="484" y="867" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#4b5563">fill the same 1 m voxel grid used for reconstructed data tracks</text>
+  <text x="1482" y="848" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#111111">generator_expected_voxels</text>
+
+  <rect x="96" y="926" width="1728" height="88" fill="#fffaf0" stroke="#d97706" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="122" y="960" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#92400e">FULL-SIMULATION EXTENSION</text>
+  <text x="122" y="994" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#111111">surface μ  →  Geant4 CMS SIM  →  DIGI  →  trigger + CMSSW RECO  →  the same cleaning, selection and ray painting as data</text>
+
+  <text x="98" y="1050" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6b7280">EXPACS/PARMA: phits.jaea.go.jp/expacs/</text>
+  <text x="1438" y="1050" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#6b7280">github.com/sbein/cmsmuography</text>
+</svg>

@@ -14,7 +14,7 @@ def parse_args():
     parser.add_argument("--observed-root", required=True)
     parser.add_argument("--observed-hist", default="cavern_muon_voxels")
     parser.add_argument("--expected-root", required=True)
-    parser.add_argument("--expected-hist", default="solid_ground_expected_voxels")
+    parser.add_argument("--expected-hist", default="generator_expected_voxels")
     parser.add_argument("-o", "--output", required=True)
     parser.add_argument(
         "--normalize",
@@ -25,7 +25,7 @@ def parse_args():
     parser.add_argument(
         "--method",
         choices=("poisson-known", "lima"),
-        default="poisson-known",
+        default="lima",
         help="poisson-known treats expected as fixed; lima uses an off region with --alpha.",
     )
     parser.add_argument(

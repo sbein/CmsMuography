@@ -3,13 +3,13 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="${PROJECT_DIR:-$(cd "${SCRIPT_DIR}/.." && pwd)}"
+WORKSPACE_DIR="$(cd "${PROJECT_DIR}/.." && pwd)"
 PYTHON="${PYTHON:-python3}"
 OUT_DIR="${OUT_DIR:-${PROJECT_DIR}/test_output/smoke_pipeline}"
 RUNTIME="${RUNTIME:-current}"
-CMSSW_SRC="${CMSSW_SRC:-/afs/cern.ch/work/s/sbein/Muography/CmsCavern/CMSSW_16_1_0_pre4/src}"
+CMSSW_SRC="${CMSSW_SRC:-${WORKSPACE_DIR}/CMSSW_16_1_0_pre4/src}"
 RUN_AOD="${RUN_AOD:-0}"
 AOD_INPUT="${AOD_INPUT:-${PROJECT_DIR}/data/test_OORun2025_AOD_nonempty.txt}"
-REDIRECTOR="${REDIRECTOR:-root://cmsxrootd.fnal.gov/}"
 
 if [[ "${RUNTIME}" == "cmssw" ]]; then
   set +u
@@ -55,11 +55,8 @@ if [[ "${RUN_AOD}" == "1" ]]; then
   echo "[2b/6] optional direct AOD reconstruction smoke"
   "${PYTHON}" scripts/cosmic_voxel_map.py \
     --input "${AOD_INPUT}" \
-    --redirector "${REDIRECTOR}" \
     --max-events 200 \
-    --output "${OUT_DIR}/observed_aod_voxels.root" \
-    --skip-bad-files \
-    --progress-every 50
+    --output "${OUT_DIR}/observed_aod_voxels.root"
 fi
 
 echo "[3/6] propagation/null smoke with reverse CMS-volume solid-ground model"
@@ -103,8 +100,10 @@ echo "[6/6] visualization smoke"
 "${PYTHON}" scripts/make_lima_slice_stacks.py \
   -i "${OUT_DIR}/lima_smoothcalib_smoke.root" \
   -o "${OUT_DIR}/lima_smoothcalib_smoke_slice_stacks.root" \
-  --hist-names cavity_excess_significance_calibrated,signed_significance_calibrated,log_transmission_excess \
-  --copy-hists observed_voxels,expected_voxels_global_scaled,calibrated_expected_voxels,smooth_calibration_factor \
+  --hist-names observed_voxels,expected_voxels_global_scaled,calibrated_expected_voxels,cavity_excess_significance_calibrated,signed_significance_calibrated,log_transmission_excess \
+  --copy-hists observed_voxels,expected_voxels_global_scaled,calibrated_expected_voxels,smooth_calibration_factor,cavity_excess_significance_calibrated,signed_significance_calibrated,log_transmission_excess \
+  --comparison-hists observed_voxels,expected_voxels_global_scaled,calibrated_expected_voxels \
+  --comparison-top-fraction 0.12 \
   --plot-units m \
   --display-rebin 1 \
   --log-3d-color \

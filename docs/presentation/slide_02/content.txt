@@ -1,0 +1,17 @@
+TITLE
+1. CMS data → cleaned cosmic-muon tracks
+
+BULLETS
+- /Cosmics/OORun2025-PromptReco-v1/AOD
+- FWLite: reco::Muon → outer, standalone, global, then inner track
+- Defaults: p ≥ 1 GeV; |u_trace| ≥ 0.05; ≥ 5 valid muon hits
+- Normalize direction; clip the ray to the finite analysis volume
+- Persist cutflow, accepted tracks and exact config_json
+  - Not yet: trigger/exposure weighting, timing direction tag, dedicated standalone-only channel
+
+VISUAL
+Observed occupancy at progressively tighter voxel thresholds
+Full data · native voxels · shared Nobs scale
+
+README LINK
+https://github.com/sbein/cmsmuography#input-cosmic-dataset

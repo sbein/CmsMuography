@@ -26,11 +26,11 @@ struct Options {
   double lon = 6.078311;
   double altitude_km = 0.510;
   double ground_water_fraction = 0.15;
-  double emin_mev = 10.0;
-  double emax_mev = 1.0e7;
-  double w_index = -1.0;
-  std::string expacs_dir;
-  std::string output = "expacs_muon_flux_grid.csv";
+  double emin_mev = 30000.0;
+  double emax_mev = 300000.0;
+  double w_index = 0.0;
+  std::string expacs_dir = "../External/EXPACS";
+  std::string output = "test_output/expacs_muon_flux_grid_cms_p5.csv";
 };
 
 double parse_double(const char* text) {

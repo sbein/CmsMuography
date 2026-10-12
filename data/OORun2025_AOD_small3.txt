@@ -1,0 +1,6 @@
+# Small OORun2025 AOD files useful for direct-AOD voxel-map smoke tests.
+# These are concrete Rucio PFNs because the global redirector may not always
+# resolve every file in this early cosmic sample.
+root://xrootd.hep.kbfi.ee:1094//store/hidata/OORun2025/Cosmics/AOD/PromptReco-v1/000/394/065/00000/7bf03433-992d-4628-a57a-a3c08b684408.root
+root://eoscms.cern.ch:1094//eos/cms//store/hidata/OORun2025/Cosmics/AOD/PromptReco-v1/000/394/070/00000/079b9e4e-ee59-4fc0-adc0-1679c20c3cca.root
+root://xrootd-cmst1-door.pic.es:1094//pnfs/pic.es/data/cms/disk//store/hidata/OORun2025/Cosmics/AOD/PromptReco-v1/000/394/064/00000/58795972-d64d-423a-ad87-50774e974556.root

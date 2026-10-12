@@ -1,0 +1,19 @@
+TITLE
+5. Observed + expected counts → Li–Ma evidence
+
+BULLETS
+- Nobs: observed voxel crossings
+- Nbkg: corrected solid-ground expectation
+- Li–Ma: Noff = Nbkg/α; default α = 0.05
+- Outputs: signed Z, positive cavity excess, Nobs/Nbkg, log transmission
+- Render 3D thresholds plus XY/XZ slice stacks
+  - Interpretation must include null-model, efficiency and geometry systematics
+
+VISUAL
+Positive cavity-significance thresholds
+Full data + 2M MC · shared Zcav scale
+
+LINKS
+Li & Ma (1983): https://articles.adsabs.harvard.edu/pdf/1983ApJ...272..317L
+GitHub: https://github.com/sbein/cmsmuography
+README: https://github.com/sbein/cmsmuography#reproducibility-notes

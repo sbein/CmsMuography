@@ -10,7 +10,6 @@ part_logs_dir="${PART_LOGS_DIR:-CosmicMuography/logs/OORun2025_AOD_disk58_parts_
 merged_root="${MERGED_ROOT:-CosmicMuography/test_output/OORun2025_AOD_disk58_voxel_map_zup_robust.root}"
 pedestal_root="${PEDESTAL_ROOT:-CosmicMuography/test_output/OORun2025_AOD_disk58_voxel_map_zup_robust_pedestals.root}"
 per_file_timeout="${PER_FILE_TIMEOUT:-1200}"
-progress_every="${PROGRESS_EVERY:-10000}"
 
 source /cvmfs/cms.cern.ch/cmsset_default.sh
 cd "${cmssw_src}"
@@ -48,7 +47,6 @@ while IFS= read -r pfn; do
     python3 CosmicMuography/scripts/cosmic_voxel_map.py \
       --input "${pfn}" \
       --output "${part_root}" \
-      --progress-every "${progress_every}" \
       > "${part_log}" 2>&1
   status=$?
   set -e

@@ -1,0 +1,17 @@
+TITLE
+4. Data-driven MC correction
+
+BULLETS
+- Ray-paint data and MC on the same 1 m voxel grid
+- Normalize the generated solid-ground expectation to data
+- Fit a deliberately broad sideband factor C(z) × Cxy(x,y)
+- Current 2M sample: 35 m depth smoothing; xy order 0
+- Check absolute depth spectra, ratios and matched 2D residual maps
+  - Exclude the CMS core; do not learn cavity-scale structure
+
+VISUAL
+Depth spectra, ratios and x-y residuals before and after correction
+Full data + 2M MC · shared residual scale
+
+README LINK
+https://github.com/sbein/cmsmuography#step-3-build-the-lima-products
