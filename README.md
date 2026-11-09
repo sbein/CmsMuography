@@ -1,40 +1,43 @@
 # CMS Cavern Muography
 
-This repository provides a compact CMS cavern-muography pipeline. It converts
+This repository organizes a small CMS cavern-muography pipeline. It converts
 2025 CMS cosmic-muon AOD into a 3D voxel map, builds an EXPACS/PARMA
 solid-overburden expectation, applies a broad data/MC correction, computes
-Li-Ma cavity significances, and writes decorated ROOT canvases.
+Li-Ma cavity significances, and writes ROOT canvases deccorrated with outlines of 
+UXC, the CMS detector, and the shaft.
 
 ## Coordinate Convention
 
-The analysis display frame is the cavern frame:
+The analysis display frame takes the cavern coordinates:
 
 - `x = CMS global x`
 - `y = -CMS global z`, the horizontal beam-pipe axis
 - `z = CMS global y`, vertically upward
 
-Histograms are stored in cm and displayed in m. Muon rays are painted toward
-positive cavern `z`. The data and simulation use identical `TH3` binning.
+Muon rays are painted toward positive cavern `z`. 
 
 ![CMS cavern reference geometry](docs/figures/readme/geometry_baseline.png)
 
 ## Input Dataset
 
-The example uses CMS cosmic AOD from:
+The example uses CMS cosmics AOD from:
 
 ```text
 /Cosmics/OORun2025-PromptReco-v1/AOD
 ```
 
-On lxplus, initialize a CMS proxy and load the supplied CMSSW area before
-running the commands below.
+On lxplus or your working file system, you can do
 
 ## Run The Pipeline
 
 ```bash
 # Environment
-voms-proxy-init --voms cms --valid 192:00
-cd /afs/cern.ch/work/s/sbein/Muography/CmsCavern/CMSSW_16_1_0_pre4/src && source /cvmfs/cms.cern.ch/cmsset_default.sh && eval "$(scram runtime -sh)" && cd /afs/cern.ch/work/s/sbein/Muography/CmsCavern/CosmicMuography
+cmsrel CMSSW_16_1_0_pre4
+cd CMSSW_16_1_0_pre4/src
+cmsenv
+cd ../../
+git clone https://github.com/sbein/CmsMuography/ #or your fork
+cd CmsMuography
 
 # 1. Reconstruct the data voxel map
 python3 scripts/cosmic_voxel_map.py -i data/OORun2025_AOD_small3.txt -o test_output/OORun2025_AOD_voxel_map_zup.root
